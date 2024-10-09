@@ -4,8 +4,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const endpoint = "/repos/mjovanc/njord";
-const repoPath = "https://github.com/mjovanc/njord";
+const endpoint = "/repos/njord-rs/njord";
+const repoPath = "https://github.com/njord-rs/njord";
 
 let octokit;
 let token = process.env.PRIVATE_GITHUB_TOKEN;
