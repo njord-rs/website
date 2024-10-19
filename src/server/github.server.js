@@ -1,11 +1,11 @@
-import { getShortdate } from "../helpers/helpers";
-import { Octokit } from "@octokit/rest";
-import dotenv from "dotenv";
+import { getShortdate } from '../helpers/helpers';
+import { Octokit } from '@octokit/rest';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
-const endpoint = "/repos/njord-rs/njord";
-const repoPath = "https://github.com/njord-rs/njord";
+const endpoint = '/repos/njord-rs/njord';
+const repoPath = 'https://github.com/njord-rs/njord';
 
 let octokit;
 let token = process.env.PRIVATE_GITHUB_TOKEN;
@@ -15,7 +15,7 @@ if (token) {
     auth: token,
   });
 } else {
-  console.log("missing github token");
+  console.log('missing github token');
 }
 
 export async function getRepoStats() {
@@ -24,10 +24,13 @@ export async function getRepoStats() {
     let stars = data.stargazers_count;
     let commits = await getCommits();
     let contributors = await getContributors();
-    let stargazers = { stars, path: repoPath + "/stargazers " };
-    let latestVersion = { version: "0.3.0-alpha", path: repoPath + "/releases" };
+    let stargazers = { stars, path: repoPath + '/stargazers ' };
+    let latestVersion = {
+      version: '0.3.0-alpha',
+      path: repoPath + '/releases',
+    };
     let latestCommit = {
-      path: repoPath + "/commit/" + commits[0].sha,
+      path: repoPath + '/commit/' + commits[0].sha,
       date: getShortdate(new Date(commits[0].commit.author.date)),
     };
     return { stargazers, latestVersion, latestCommit, contributors }; //TODO: change version to the latest release with GitHub API later
@@ -39,7 +42,7 @@ export async function getRepoStats() {
 
 async function getLatestVersion() {
   try {
-    const { data } = await octokit.request(endpoint + "/releases");
+    const { data } = await octokit.request(endpoint + '/releases');
     return data;
   } catch (error) {
     console.error(error);
@@ -49,7 +52,7 @@ async function getLatestVersion() {
 
 async function getCommits() {
   try {
-    const { data } = await octokit.request(endpoint + "/commits");
+    const { data } = await octokit.request(endpoint + '/commits');
     return data;
   } catch (error) {
     console.error(error);
@@ -60,7 +63,7 @@ async function getCommits() {
 
 async function getContributors() {
   try {
-    const { data } = await octokit.request(endpoint + "/contributors");
+    const { data } = await octokit.request(endpoint + '/contributors');
     return data;
   } catch (error) {
     console.error(error);
