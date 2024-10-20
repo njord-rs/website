@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import '../app.css';
@@ -12,14 +13,14 @@
     property="og:description"
     content="A lightweight and extensible ORM library and Query Builder for Rust."
   />
-  <meta property="og:image" content="/meta.png" />
+  <meta property="og:image" content="{base}/meta.png" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:title" content={pageTitle} />
   <meta
     property="twitter:description"
     content="A lightweight and extensible ORM library and Query Builder for Rust."
   />
-  <meta property="twitter:image" content="/meta.png" />
+  <meta property="twitter:image" content="{base}/meta.png" />
 
   <!-- Prevent page flash -->
   <script>
