@@ -4,7 +4,7 @@
   const databases = [
     { label: 'SQLite', isReady: true },
     { label: 'PostgreSQL', isReady: false },
-    { label: 'MySQL', isReady: false },
+    { label: 'MySQL', isReady: true },
     { label: 'MariaDB', isReady: false },
     { label: 'ORACLE', isReady: false },
     { label: 'MS SQL Server', isReady: false },
