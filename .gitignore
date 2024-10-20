@@ -144,3 +144,4 @@ dist
 
 .svelte-kit/
 package
+build

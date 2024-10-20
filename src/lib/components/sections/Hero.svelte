@@ -11,7 +11,9 @@
     alt="Viking city"
   />
 
-  <div class="fade-out pointer-events-none bg-gradient-to-b from-transparent to-zinc-200 dark:to-zinc-900"></div>
+  <div
+    class="fade-out pointer-events-none bg-gradient-to-b from-transparent to-zinc-200 dark:to-zinc-900"
+  ></div>
 
   <div class="container">
     <div>

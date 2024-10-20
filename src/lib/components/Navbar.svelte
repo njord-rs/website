@@ -19,7 +19,10 @@
       <!-- Main menu -->
       <ul>
         <li>
-          <Link class="hover:text-primary" href="https://docs.rs/njord/latest/njord/">Docs</Link>
+          <Link
+            class="hover:text-primary"
+            href="https://docs.rs/njord/latest/njord/">Docs</Link
+          >
         </li>
       </ul>
 
